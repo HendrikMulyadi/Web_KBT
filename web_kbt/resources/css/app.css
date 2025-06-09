@@ -5,7 +5,37 @@
 @tailwind components;
 @tailwind utilities;
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+@layer components {
+  .input-field {
+    @apply w-full border border-gray-300 p-2 rounded;
+  }
+
+  .section-title {
+    @apply text-xl font-semibold mb-4;
+  }
+
+  .delivery-card {
+    @apply border border-gray-300 rounded p-4 cursor-pointer;
+  }
+
+  .delivery-card.active {
+    @apply border-purple-600;
+  }
+
+  .product-item {
+    @apply flex items-center justify-between gap-4;
+  }
+
+  .product-image {
+    @apply w-16 h-16 object-cover rounded;
+  }
+
+  .order-summary {
+    @apply bg-white border border-gray-200 rounded-lg p-6 shadow;
+  }
+
+  .confirm-btn {
+    @apply w-full bg-purple-600 text-white py-2 rounded hover:bg-purple-700 transition;
+  }
 }
+
