@@ -3,7 +3,7 @@
     <div class="relative flex h-20 items-center justify-between">
       <div class="flex flex-2 grid grid-cols-2 ">
         <div class="flex justify-items-center ">
-          <img class="h-8 w-auto ml-10 justify-items-center" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+          <h2 class=" ml-10 justify-items-center text-3xl font-bold text-blue-600 mb-1">RenGo</h2>
         </div>
         <div class=" flex grid-flow-col justify-items-center sm:block">
           <div class="flex space-x-4">

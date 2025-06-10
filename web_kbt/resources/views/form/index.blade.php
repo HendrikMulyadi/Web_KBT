@@ -4,35 +4,27 @@
     <div class="lg:col-span-2 space-y-8">
       <div class="justify-items-center"><h1 class="font-bold text-[80px] justify-center">RENTAL MOBIL RENGO</h1></div>
       <section>
-        <h2 class="section-title">Alamat Email </h2>
+        <h2 class="section-title ">Alamat Email </h2>
         <input type="email" placeholder=" Masukkan Alamat Email " class="input-field" />
-        <h2 class="section-title mt-2">No Telphone </h2>
+        <h2 class="section-title mt-3">No Telphone </h2>
         <input type="nohp" placeholder=" Masukkan No Telphone " class="input-field" />
-      </section>
-      <section>
-        <h2 class="section-title">Identitas</h2>
+        <h2 class="section-title mt-3">Nama Lengkap</h2>
            <input type="text" placeholder="Masukkan Nama Lengkap" class="input-field" />
+        <h2 class="section-title mt-3">Tanggal lahir </h2>
            <input type="date" placeholder="Masukkan Tanggal Lahir" class="input-field mt-2" />
+        <h2 class="section-title mt-3">Alamat Lengkap </h2>
            <input type="text" placeholder="Alamat Lengkap" class="input-field mt-2" />
         <h2 class="section-title mt-3">Waktu Booking</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-                <input type="date" placeholder="Waktu Mulai" class="input-field" />
-            </div>
-            <div class="flex items-start">
-                <label><input class="h-5 w-5 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="12jam" value="12 Jam"> 12 Jam</label>
-                <label><input class="h-5 w-5 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="1hari" value="1 Hari"> 1 Hari</label>
-                <label><input class="h-5 w-5 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="2hari" value="2 Hari"> 2 Hari</label>
-                <label><input class="h-5 w-5 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="2hari" value="3 Hari"> 3 Hari</label>
-                <label><input class="h-5 w-5 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="2hari" value="4 Hari"> 4 Hari</label>
-                <label><input class="h-5 w-5 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="2hari" value="5 Hari"> 5 Hari</label>
-                <label><input class="h-5 w-5 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="2hari" value="6 Hari"> 6 Hari</label>
-                <label><input class="h-5 w-5 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="2hari" value="1 Minggu"> 1 Minggu</label>
-            </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-          <input type="text" placeholder="State/Province" class="input-field" />
-          <input type="text" placeholder="Postal code" class="input-field" />
-        </div>
-        <input type="text" placeholder="Phone" class="input-field mt-2" />
+          <input type="date" placeholder="Waktu Mulai" class="input-field" />
+        <h2 class="section-title mt-3">Durasi Booking</h2>
+                <label><input class="h-5 w-5 mt-3 mb-5 mr-5 text-purple-600 border-black-500 rounded" type="checkbox" name="12jam" value="12 Jam"> 12 Jam</label>
+                <label><input class="h-5 w-5 mt-3 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="1hari" value="1 Hari"> 1 Hari</label>
+                <label><input class="h-5 w-5 mt-3 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="2hari" value="2 Hari"> 2 Hari</label>
+                <label><input class="h-5 w-5 mt-3 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="2hari" value="3 Hari"> 3 Hari</label>
+                <label><input class="h-5 w-5 mt-3 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="2hari" value="4 Hari"> 4 Hari</label>
+                <label><input class="h-5 w-5 mt-3 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="2hari" value="5 Hari"> 5 Hari</label>
+                <label><input class="h-5 w-5 mt-3 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="2hari" value="6 Hari"> 6 Hari</label>
+                <label><input class="h-5 w-5 mt-3 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="2hari" value="1 Minggu"> 1 Minggu</label>
       </section>
 
       <!-- Delivery Method -->
