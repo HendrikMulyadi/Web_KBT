@@ -1,2 +1,2 @@
 import './bootstrap';
-import'@tailwindcss/vite';
+/*import'@tailwindcss/vite';*/

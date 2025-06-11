@@ -1,0 +1,11 @@
+/*@import 'tailwindcss';
+@source "../views";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;*/
+@import 'bootstrap/scss/bootstrap';
+
+nav{
+    color: rgb(31, 31, 31);
+}

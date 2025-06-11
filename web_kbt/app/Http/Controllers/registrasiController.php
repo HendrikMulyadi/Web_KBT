@@ -34,7 +34,7 @@ class registrasiController extends Controller
         $request->validate([
             'name'=>'required',
             'email'=>'required|email',
-            'password'=>'required',
+            'password'=>'required'
         ],[
             'name.required'=>'Nama Tidak Boleh Kosong !',
             'email.required'=>'Email Tidak Boleh Kosong !',

@@ -13,5 +13,9 @@ Route::resource(name: '/home',  controller: homeController::class);
 Route::resource(name: '/form',  controller: formController::class);
 Route::resource(name: '/login',  controller: loginController::class);
 Route::resource(name: '/registrasi',  controller: registrasiController::class);
-Route::post('/registrasi', [registrasiController::class, 'store'])->name('registrasi.store');
+
+//Route::get('/registrasi', [RegistrasiController::class, 'create'])->name('registrasi');
+Route::post('/registrasi', [RegistrasiController::class, 'store'])->name('registrasi.store');
+
+//Route::post('/registrasi', [registrasiController::class, 'store'])->name('registrasi.store');
 
