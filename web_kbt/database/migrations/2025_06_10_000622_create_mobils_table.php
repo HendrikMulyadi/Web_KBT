@@ -14,15 +14,14 @@ return new class extends Migration
     {
         Schema::create('mobils', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(user::class);
+            $table->string('nama');
             $table->string('nopolisi');
             $table->string('merek');
-            $table->enum('jenis',['sedan','MVP','SUV']);
+            $table->string('jenis');
             $table->string('Kapasitas');
-            $table->string('harga');
+            $table->decimal('harga', 10, 2);
             $table->text('foto');
             $table->timestamps();
-            $table->softDeletes('delete');
         });
     }
 

@@ -1,84 +1,117 @@
 <x-layouts.app>
-  <body class="bg-gray-50 text-gray-800">
-    <div class="max-w-7xl mx-auto p-6">
-    <div class="lg:col-span-2 space-y-8">
-      <div class="justify-items-center"><h1 class="font-bold text-[80px] justify-center">RENTAL MOBIL RENGO</h1></div>
-      <section>
-        <h2 class="section-title ">Alamat Email </h2>
-        <input type="email" placeholder=" Masukkan Alamat Email " class="input-field" />
-        <h2 class="section-title mt-3">No Telphone </h2>
-        <input type="nohp" placeholder=" Masukkan No Telphone " class="input-field" />
-        <h2 class="section-title mt-3">Nama Lengkap</h2>
-           <input type="text" placeholder="Masukkan Nama Lengkap" class="input-field" />
-        <h2 class="section-title mt-3">Tanggal lahir </h2>
-           <input type="date" placeholder="Masukkan Tanggal Lahir" class="input-field mt-2" />
-        <h2 class="section-title mt-3">Alamat Lengkap </h2>
-           <input type="text" placeholder="Alamat Lengkap" class="input-field mt-2" />
-        <h2 class="section-title mt-3">Waktu Booking</h2>
-          <input type="date" placeholder="Waktu Mulai" class="input-field" />
-        <h2 class="section-title mt-3">Durasi Booking</h2>
-                <label><input class="h-5 w-5 mt-3 mb-5 mr-5 text-purple-600 border-black-500 rounded" type="checkbox" name="12jam" value="12 Jam"> 12 Jam</label>
-                <label><input class="h-5 w-5 mt-3 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="1hari" value="1 Hari"> 1 Hari</label>
-                <label><input class="h-5 w-5 mt-3 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="2hari" value="2 Hari"> 2 Hari</label>
-                <label><input class="h-5 w-5 mt-3 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="2hari" value="3 Hari"> 3 Hari</label>
-                <label><input class="h-5 w-5 mt-3 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="2hari" value="4 Hari"> 4 Hari</label>
-                <label><input class="h-5 w-5 mt-3 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="2hari" value="5 Hari"> 5 Hari</label>
-                <label><input class="h-5 w-5 mt-3 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="2hari" value="6 Hari"> 6 Hari</label>
-                <label><input class="h-5 w-5 mt-3 m-5 text-purple-600 border-black-500 rounded" type="checkbox" name="2hari" value="1 Minggu"> 1 Minggu</label>
-      </section>
+    <div class=" mb-5" style="backround-color: #f789"><h2 class="text-center">Pemesanan Rental Mobil</h2>
+    <h1 class="text-center text-primary" style="font:bold  " >RenGO</h1></div>
 
-      <!-- Delivery Method -->
-      <section>
-        <h2 class="section-title">Delivery Method</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="delivery-card active">
-            <p class="font-medium">Standard</p>
-            <p class="text-sm text-gray-500">4–10 business days</p>
-            <p class="mt-2 font-semibold">$5.00</p>
-          </div>
-          <div class="delivery-card">
-            <p class="font-medium">Express</p>
-            <p class="text-sm text-gray-500">2–5 business days</p>
-            <p class="mt-2 font-semibold">$16.00</p>
-          </div>
+<div class="container my-5">
+
+        @if(session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+    <div class="row align-items-start">
+        <div class="col">
+            <div>
+            <h4> Rental Mobil Terpercaya Dan Mudah</h4>
+            <h4> Persyaratan Utama:
+                <ul>
+                    <li> Memiliki KTP</li>
+                    <li> Memiliki SIM A Aktip</li>
+                    <li> KTM ( Bagi Mahasiswa)</li>
+                </ul>
+            </h4>
+            <h4> Persyaratan Khusus Untuk Sewa Lepas Kunci</h4>
+            <ul>
+                <li> Poto Copy KTP / SIM</li>
+                <li> Poto Copy KTM untuk Mahasiswa</li>
+            </ul>
+            </div>
         </div>
-      </section>
+        <div class="col">
+            <form class="row" action="{{ route('forms.store') }}" method="POST">
+            @csrf
+                <div class="mb-3">
+                  <label for="name" class="form-label">Nama</label>
+                  <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                 <label for="phone" class="form-label">Nomor HP</label>
+                 <input type="text" class="form-control" id="phone" name="phone" required>
+                </div>
+                <div class="mb-3">
+                  <label for="alamat" class="form-label">Alamat</label>
+                  <input type="text" class="form-control" id="alamat" name="alamat" required>
+                </div>
+                <div class="mb-3">
+                   <label for="mobil_id" class="form-label">Pilih Mobil</label>
+                   <select name="mobil_id" id="mobil_id" class="form-select" required>
+                   <option disabled selected>-- Pilih Mobil --</option>
+                   @foreach ($mobils as $mobil)
+                     <option value="{{ $mobil->id }}">{{ $mobil->nama }}</option>
+                   @endforeach
+                   </select>
+                </div>
+                <div class="mb-3">
+                  <label for="waktu" class="form-label">Tanggal Mulai Sewa</label>
+                <input type="date" class="form-control" id="waktu" name="waktu" required>
+                </div>
+                <div class="mb-3">
+                     <label for="lama_sewa" class="form-label">Lama Sewa</label>
+                    <select class="form-select" id="lama_sewa" name="lama_sewa" required>
+                    <option disabled selected>Pilih durasi</option>
+                    @for($i = 1; $i <= 6; $i++)
+                     <option value="{{ $i }}">{{ $i }} Hari</option>
+                    @endfor
+                    <option value="7">1 Minggu</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                   <label class="form-label">Harga Per Hari</label>
+                   <input type="text" class="form-control" id="harga" readonly>
+                </div>
+                <div class="mb-3">
+                   <label class="form-label">Total Harga</label>
+                   <input type="text" class="form-control" id="total" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label for="pesan" class="form-label">Pesan Tambahan</label>
+                    <textarea class="form-control" id="pesan" name="pesan" rows="3"></textarea>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end"><button type="submit" class="btn btn-dark">Kirim Pemesanan</button></div>
+            </form>
+        </div>
     </div>
+</div>
 
-    <!-- Right Column -->
-    <aside class="order-summary">
-      <h2 class="text-lg font-semibold mb-4">Order Summary</h2>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const mobilSelect = document.getElementById("mobil_id");
+      const hargaInput = document.getElementById("harga");
+      const lamaSewaSelect = document.getElementById("lama_sewa");
+      const totalInput = document.getElementById("total");
 
-      <div class="space-y-4 border-b border-gray-200 pb-4">
-        <div class="product-item">
-          <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-01.jpg" class="product-image" />
-          <div>
-            <p class="text-sm font-medium">Basic Tee</p>
-            <p class="text-sm text-gray-500">Black, Large</p>
-          </div>
-          <p>$32.00</p>
-        </div>
-        <div class="product-item">
-          <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-02.jpg" class="product-image" />
-          <div>
-            <p class="text-sm font-medium">Basic Tee</p>
-            <p class="text-sm text-gray-500">Sienna, Large</p>
-          </div>
-          <p>$32.00</p>
-        </div>
-      </div>
+      let hargaMobil = 0;
 
-      <div class="text-sm space-y-2 mt-4">
-        <div class="flex justify-between"><span>Subtotal</span><span>$64.00</span></div>
-        <div class="flex justify-between"><span>Shipping</span><span>$5.00</span></div>
-        <div class="flex justify-between"><span>Taxes</span><span>$5.52</span></div>
-        <div class="flex justify-between font-semibold border-t pt-2">
-          <span>Total</span><span>$75.52</span>
-        </div>
-      </div>
+      mobilSelect.addEventListener("change", function () {
+        fetch(`/mobil/${this.value}/harga`)
+          .then(response => response.json())
+          .then(data => {
+            hargaMobil = data.harga;
+            hargaInput.value = "Rp" + hargaMobil.toLocaleString("id-ID");
+            hitungTotal();
+          });
+      });
 
-      <button class="confirm-btn mt-6">Confirm Order</button>
-    </aside>
-  </div>
-  </body>
+      lamaSewaSelect.addEventListener("change", function () {
+        hitungTotal();
+      });
+
+      function hitungTotal() {
+        const lama = parseInt(lamaSewaSelect.value);
+        if (hargaMobil && lama) {
+          const total = hargaMobil * lama;
+          totalInput.value = "Rp" + total.toLocaleString("id-ID");
+        }
+      }
+    });
+  </script>
 </x-layouts.app>
