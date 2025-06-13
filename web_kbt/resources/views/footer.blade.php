@@ -19,7 +19,7 @@
         <h5>Kontak</h5>
         <ul class="list-unstyled">
           <li>Email: rengo@gmail.com</li>
-          <li>Telp: 0822-3456-1904</li>
+          <li>Telp: 0822-1111-1905</li>
         </ul>
       </div>
     </div>

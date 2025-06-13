@@ -1,7 +1,7 @@
 <x-layouts.app>
 <div class="search-section text-center py-5 bg-light">
     <h1 class="fw-bold">RENTAL MOBIL ONLINE TERBAIK</h1>
-    <a href="#" class="btn btn-warning mt-3">Daftarkan Mobil</a>
+    <a href="{{url('/form')}}" class="btn btn-dark mt-3">Pesan Sekarang</a>
 </div>
 <div class="container">
     <div class=" container overflow-hidden">

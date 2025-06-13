@@ -12,16 +12,19 @@
     <div class=" flex collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ url('/home') }}">Beranda</a>
+          <a class="nav-link active fs-5" aria-current="page" href="{{ url('/home') }}">Beranda</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{{ url('/tentang') }}">Tentang</a>
+          <a class="nav-link active fs-5" href="{{ url('/tentang') }}">Tentang</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link active fs-5" href="{{ url('/layanan') }}">Layanan</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{{ url('/kendaraan') }}">Mobil</a>
+          <a class="nav-link active fs-5" href="{{ url('/kendaraan') }}">Mobil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{{ url('/kontak') }}">Kontak</a>
+          <a class="nav-link active fs-5" href="{{ url('/kontak') }}">Kontak</a>
         </li>
       </ul>
     </div>

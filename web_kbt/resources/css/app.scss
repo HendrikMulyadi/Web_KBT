@@ -30,7 +30,17 @@ p{
     height: 4cm;
     width: 5cm;
 }
-ft{
+.ft{
     height: 3cm;
     width: 3cm;
+}
+.ii{
+    background-image:url("/web_kbt/public/img/Mobil.png") ;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(40%);
+
+}
+.i{
+    list-style: none;
 }
