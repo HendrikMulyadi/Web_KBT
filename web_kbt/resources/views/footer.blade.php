@@ -4,22 +4,22 @@
   <div class="container py-4">
     <div class="row">
       <div class="col-md-4 mb-3">
-        <h5>RenGo</h5>
-        <p>Rental Mobil Terpercaya dan Mudah.</p>
+        <h2 class="text-primary">RenGo</h2>
+        <p>Rental Mobil Mudah dan Terpercaya.</p>
       </div>
       <div class="col-md-4 mb-3">
-        <h5>Tentang Kami</h5>
+        <h5>Beranda</h5>
         <ul class="list-unstyled">
-          <li><a href="#" class="text-white text-decoration-none">Beranda</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Tentang</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Kontak</a></li>
+          <li><a href="{{url('/tentang')}}" class="text-white text-decoration-none">Tentang Kami</a></li>
+          <li><a href="{{url('/mobil')}}" class="text-white text-decoration-none">Mobil</a></li>
+          <li><a href="{{url('/Kontak')}}" class="text-white text-decoration-none">Kontak</a></li>
         </ul>
       </div>
       <div class="col-md-4 mb-3">
         <h5>Kontak</h5>
         <ul class="list-unstyled">
-          <li>Email: info@aplikasi.com</li>
-          <li>Telp: 0812-3456-7890</li>
+          <li>Email: rengo@gmail.com</li>
+          <li>Telp: 0822-3456-1904</li>
         </ul>
       </div>
     </div>

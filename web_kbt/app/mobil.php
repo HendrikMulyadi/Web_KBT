@@ -8,7 +8,7 @@ class mobil extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama','nopolisi','merek','jenis','Kapasitas','harga','foto'];
+    protected $fillable = ['nama','nopolisi','merek','jenis','kapasitas','harga','foto'];
     protected $casts = [
     'harga' => 'float',
 ];

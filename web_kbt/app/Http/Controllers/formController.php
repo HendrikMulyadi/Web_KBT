@@ -13,7 +13,9 @@ class formController extends Controller
      */
     public function index()
     {
-         return view('form.index');
+    $mobils = mobil::all(); // Ambil semua data mobil dari database
+    return view('form.index', compact('mobils'));
+
     }
 
     /**
@@ -23,7 +25,6 @@ class formController extends Controller
     {
         $mobils = Mobil::all();
     return view('form.index', compact('mobils'));
-    
     }
 
     /**

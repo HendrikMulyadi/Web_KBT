@@ -1,5 +1,5 @@
 <x-layouts.app>
-    <div class=" mb-5" style="backround-color: #f789"><h2 class="text-center">Pemesanan Rental Mobil</h2>
+    <div class=" mb-5 fw-bold mt-5 bc-primary-rgb" style=""><h2 class="text-center">PEMESANAN RENTAL MOBIL</h2>
     <h1 class="text-center text-primary" style="font:bold  " >RenGO</h1></div>
 
 <div class="container my-5">
@@ -10,16 +10,16 @@
     <div class="row align-items-start">
         <div class="col">
             <div>
-            <h4> Rental Mobil Terpercaya Dan Mudah</h4>
-            <h4> Persyaratan Utama:
-                <ul>
-                    <li> Memiliki KTP</li>
-                    <li> Memiliki SIM A Aktip</li>
-                    <li> KTM ( Bagi Mahasiswa)</li>
-                </ul>
-            </h4>
-            <h4> Persyaratan Khusus Untuk Sewa Lepas Kunci</h4>
-            <ul>
+            <h3> Rental Mobil  Dan Terpercaya</h3>
+            <h5>Pilihan pertama rental mobil RenGo hadir untuk memberikan pelayanan terbaik dalam perjalanan Anda dengan puluhan armada yang prima dan berkualitas.</h5>
+            <h5 class="h55 mt-3"> Persyaratan Utama:</h5>
+            <ul class="lii">
+                <li > Memiliki KTP</li>
+                <li> Memiliki SIM A Aktip</li>
+                <li> KTM ( Bagi Mahasiswa)</li>
+            </ul>
+            <h5 class="h55"> Persyaratan Khusus Untuk Sewa Lepas Kunci</h5>
+            <ul class="lii">
                 <li> Poto Copy KTP / SIM</li>
                 <li> Poto Copy KTM untuk Mahasiswa</li>
             </ul>
