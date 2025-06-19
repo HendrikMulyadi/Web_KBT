@@ -21,6 +21,7 @@
                         <th>Lama Sewa</th>
                         <th>Total Harga</th>
                         <th>Pesan</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,6 +36,18 @@
                             <td class="text-center">{{ $form->lama_sewa }} hari</td>
                             <td>Rp{{ number_format($form->total, 0, ',', '.') }}</td>
                             <td>{{ $form->pesan ?? '-' }}</td>
+                            <td>
+                {{ $form->pesan ?? '-' }}
+                @if($form->status != 'selesai')
+                    <form action="{{ route('pesanan.selesai', $form->id) }}" method="POST" class="mt-2">
+                        @csrf
+                        @method('PUT')
+                        <button type="submit" class="btn btn-success btn-sm">Selesaikan</button>
+                    </form>
+                @else
+                    <span class="badge bg-success">Terselesaikan</span>
+                @endif
+            </td>
                         </tr>
                     @empty
                         <tr>

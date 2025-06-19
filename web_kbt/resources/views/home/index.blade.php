@@ -3,36 +3,42 @@
     <h1 class="fw-bold">RENTAL MOBIL ONLINE TERBAIK</h1>
 </div>
 <div class="container mt-5">
+    <form action="{{ url('/home') }}" method="GET">
     <div class="row g-3 mb-4">
-        <div class="col-md-4">
-        <input type="text" class="form-control" placeholder="Cari nama mobil">
+        <div class="col-md-6">
+            <input type="text" name="nama" id="searchNama" class="form-control" placeholder="Cari nama mobil" value="{{ request('nama') }}">
         </div>
-        <div class="col-md-3">
-            <select class="form-select">
-            <option selected>Pilih Harga</option>
-            <option>Rp >300.000</option>
-            <option>Rp >500.000</option>
-            <option>Rp >1.000.000</option>
+        {{-- <div class="col-md-3">
+            <select class="form-select"  name="harga" id="searchHarga">
+                <option value="">Pilih Harga</option>
+                <option value="300000" {{ request('harga') == '300000' ? 'selected' : '' }}>Rp >300.000</option>
+                <option value="500000" {{ request('harga') == '500000' ? 'selected' : '' }}>Rp >500.000</option>
+                <option value="1000000" {{ request('harga') == '1000000' ? 'selected' : '' }}>Rp >1.000.000</option>
+            </select>
+        </div> --}}
+        <div class="col-md-4">
+            <select class="form-select" name="jenis" id="searchJenis">
+                <option value="">Pilih Tipe Mobil</option>
+                <option value="MPV" {{ request('jenis') == 'MPV' ? 'selected' : '' }}>MPV</option>
+                <option value="SUV" {{ request('jenis') == 'SUV' ? 'selected' : '' }}>SUV</option>
+                <option value="Minibus" {{ request('jenis') == 'Minibus' ? 'selected' : '' }}>Minibus</option>
             </select>
         </div>
-        <div class="col-md-3">
-        <select class="form-select">
-            <option selected>Pilih Tipe Mobil</option>
-            <option>MPV</option>
-            <option>SUV</option>
-            <option>Minibus</option>
-        </select>
-        </div>
         <div class="col-md-2">
-            <button class="btn btn-danger w-100">Cari Mobil</button>
+            <button id="btnCari" class="btn btn-outline-primary w-100">Cari Mobil</button>
         </div>
     </div>
+</form>
+
+    @if($mobils->isEmpty())
     <div>
-        <p id="no-results" class="text-muted text-center" style="display: none;">Mobil tidak ditemukan.</p>
+        <p class="text-muted text-center">Mobil tidak ditemukan.</p>
     </div>
-    <div class="row gx-2">
+@endif
+
+    <div class="row gx-3 d-flex flex-wrap">
             @foreach($mobils as $mobil)
-            <div class="col-4 mt-3">
+            <div class="col-12 col-sm-6 col-md-4 mt-3">
                 <div class="card venue-card flex h-10 w-10 shadow-sm">
                         <img src="{{asset (('img/').$mobil->foto) }}" class="card-img-top img-fluid d-block mx-auto" style="width: 250px; height: 150px; object-fit: cover;">
                         <div class="card-body">
@@ -53,7 +59,7 @@
                 <div class="col-md-6">
                     <h2 class="section-title text-center border-bottom pb-2 mb-3">Tentang RenGO Rental Mobil</h2>
                     <p><strong>RenGO Rental Mobil: Terpercaya dan Berkualitas</strong></p>
-                    <p>Percayakan perjalanan Anda pada RenGo Rental Mobil. Kami menyediakan mobil Avanza, Hiace, Fortuner VRZ, dan Pajero dengan harga kompetitif.</p>
+                    <p>Percayakan perjalanan Anda pada RenGo Rental Mobil. Kami menyediakan mobil Avanza, Hiace, Fortuner VRZ,Pajero dan lainnya dengan harga kompetitif.</p>
 
                 </div>
             </div>

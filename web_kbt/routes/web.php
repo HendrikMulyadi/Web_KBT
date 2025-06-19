@@ -5,6 +5,7 @@ use App\Http\Controllers\homeController;
 use App\Http\Controllers\formController;
 use App\Http\Controllers\kendaraanController;
 use App\Http\Controllers\kontakController;
+use App\Http\Controllers\laporanController;
 use App\Http\Controllers\layananController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\pesananController;
@@ -23,6 +24,7 @@ Route::resource(name: '/pesanan',  controller: pesananController::class);
 Route::resource(name: '/layanan',  controller: layananController::class);
 Route::resource(name: '/tentang',  controller: tentangController::class);
 Route::resource(name: '/kontak',  controller: kontakController::class);
+Route::resource(name: '/laporan',  controller: laporanController::class);
 
 
 Route::post('/registrasi', [RegistrasiController::class, 'store'])->name('registrasi.store');
@@ -35,4 +37,6 @@ Route::get('/mobil/{id}/harga', [FormController::class, 'getHargaMobil']);
 Route::get('/form', [FormController::class, 'create']);
 Route::get('/form', [FormController::class, 'index']);
 Route::resource('forms', FormController::class);
-
+Route::get('/laporan', [LaporanController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index']);
+Route::put('/pesanan/{id}/selesai', [FormController::class, 'selesaikan'])->name('pesanan.selesai');

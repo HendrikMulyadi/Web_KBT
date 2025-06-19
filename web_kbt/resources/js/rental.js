@@ -1,27 +1,46 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const searchInput = document.querySelector('input[placeholder="Cari nama mobil"]');
+  const searchNama = document.getElementById('searchNama');
+  const searchHarga = document.getElementById('searchHarga');
+  const searchJenis = document.getElementById('searchJenis');
+  const searchButton = document.getElementById('btnCari');
   const cards = document.querySelectorAll('.venue-card');
   const noResults = document.getElementById('no-results');
 
-  if (!searchInput || cards.length === 0) return;
-
-  searchInput.addEventListener('input', function () {
-    const searchTerm = this.value.toLowerCase().trim();
+  function filterCards() {
+    const namaValue = searchNama.value.toLowerCase().trim();
+    const hargaValue = searchHarga.value;
+    const jenisValue = searchJenis.value;
     let matchCount = 0;
 
     cards.forEach(card => {
-      const titleElement = card.querySelector('.card-title');
-      if (!titleElement) return;
+      const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
+      const hargaText = card.querySelectorAll('.card-text')[1]?.textContent || '';
+      const jenisText = card.querySelectorAll('.card-text')[0]?.textContent || '';
 
-      const title = titleElement.textContent.toLowerCase();
-      const isMatch = title.includes(searchTerm);
+      const harga = parseInt(hargaText.replace(/[^\d]/g, '')) || 0;
+      const jenis = jenisText.toLowerCase();
 
-      card.style.display = isMatch ? '' : 'none';
+      let isMatch = true;
+
+      // Filter nama mobil
+      if (namaValue && !title.includes(namaValue)) isMatch = false;
+
+      // Filter harga
+      if (hargaValue === 'Rp >300.000' && harga <= 300000) isMatch = true;
+      if (hargaValue === 'Rp >500.000' && harga <= 500000) isMatch = true;
+      if (hargaValue === 'Rp >1.000.000' && harga <= 1000000) isMatch = true;
+
+      // Filter jenis mobil
+      if (jenisValue !== 'Pilih Tipe Mobil' && !jenis.includes(jenisValue.toLowerCase())) {
+        isMatch = false;
+      }
+
+      card.parentElement.style.display = isMatch ? 'block' : 'none';
       if (isMatch) matchCount++;
     });
 
-    if (noResults) {
-      noResults.style.display = matchCount === 0 ? 'block' : 'none';
-    }
-  });
+    noResults.style.display = matchCount === 0 ? 'block' : 'none';
+  }
+
+  searchButton.addEventListener('click', filterCards);
 });

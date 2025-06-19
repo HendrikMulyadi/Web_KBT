@@ -23,6 +23,12 @@
                 <li> Poto Copy KTP / SIM</li>
                 <li> Poto Copy KTM untuk Mahasiswa</li>
             </ul>
+            <h5 class="h55"> Pembayaran Cash Atau Transfer Bank</h5>
+            <li> Pembayaran Setelah Unit Kembali</li>
+            <li> Transfer Bank yang tersedia: BRI, BCA
+                <li> BRI : 4456.02.222.5758.0.20</li>
+                <li> BCA : 4444.02.242.3258.0.01</li>
+            </li>
             </div>
         </div>
         <div class="col">

@@ -86,4 +86,13 @@ class formController extends Controller
         $mobil = Mobil::findOrFail($id);
         return response()->json(['harga' => $mobil->harga]);
     }
+    public function selesaikan($id)
+{
+    $form = Form::findOrFail($id);
+    $form->status = 'selesai';
+    $form->save();
+
+    return redirect()->back()->with('success', 'Pemesanan ditandai selesai.');
+}
+
 }

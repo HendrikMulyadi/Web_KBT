@@ -29,7 +29,23 @@ class pesananController extends Controller
      */
     public function store(Request $request)
     {
-        //
+          $validated = $request->validate([
+        'nama' => 'required|string',
+        'mobil' => 'required|string',
+        'nomor_hp' => 'required|string',
+        'alamat' => 'required|string',
+        'tanggal_sewa' => 'required|date',
+        'lama_sewa' => 'required|integer',
+        'total_harga' => 'required|string',
+        'pesan' => 'nullable|string',
+       
+    ]);
+
+    // $validated['status'] = 'diproses'; // status default saat pesan baru
+
+    // Pemesanan::create($validated);
+
+    return redirect('/pesanan')->with('success', 'Pemesanan berhasil dibuat.');
     }
 
     /**
